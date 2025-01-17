@@ -5,7 +5,7 @@ let numLimite = amplitudeJogo();
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
-
+console.log("Testando mudar pelo editor do gitHub na Web";
 
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
