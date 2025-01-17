@@ -1,7 +1,11 @@
+
 let listaNumerosSorteados = [];
-let numLimite = 10;
+let numLimite = amplitudeJogo();
+
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
+
+
 
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
@@ -11,10 +15,22 @@ function exibirTextoNaTela(tag, texto) {
 
 function exibirMensagemInicial() {
     exibirTextoNaTela('h1', 'Jogo do número secreto');
-    exibirTextoNaTela('p', 'Escolha um número entre 1 e 10');
+    exibirTextoNaTela('p', `Escolha um número entre 1 e ${numLimite}`);
 }
 
 exibirMensagemInicial();
+
+function amplitudeJogo(){ 
+    let amplitude = parseInt(prompt("O padrão do jogo vai até 10, você deseja alterar para outra amplitude que 10?"));
+    if (amplitude != 10){
+        return amplitude;
+    }
+    else{
+        return 10;
+    }
+}
+console.log(numLimite);
+console.log(numeroSecreto);
 
 function verificarChute() {
     let chute = document.querySelector('input').value;
@@ -63,4 +79,5 @@ function reiniciarJogo() {
     tentativas = 1;
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', true)
+    console.log(numeroSecreto); //
 }
